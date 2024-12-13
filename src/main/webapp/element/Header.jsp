@@ -41,13 +41,9 @@
 			<div class="topbar">
 				<div class="content-topbar container h-100">
 					<div class="left-topbar">
-						<span class="left-topbar-item flex-wr-s-c"> <span>
-								New York, NY </span> <img class="m-b-1 m-rl-8"
-							src="images/icons/icon-night.png" alt="IMG"> <span>
-								HI 58° LO 56° </span>
+						<span class="left-topbar-item flex-wr-s-c"> 
 						</span> 
-						<a href="#" class="left-topbar-item"> About </a> 
-						<a href="#" class="left-topbar-item"> Contact </a>
+						
 						<c:if test="${ sessionScope.user!=null}">
 
 						<a href="admin" class="left-topbar-item"> Admin </a>
@@ -92,15 +88,11 @@
 			<div class="menu-mobile">
 				<ul class="topbar-mobile">
 					<li class="left-topbar"><span
-						class="left-topbar-item flex-wr-s-c"> <span> New
-								York, NY </span> <img class="m-b-1 m-rl-8"
-							src="images/icons/icon-night.png" alt="IMG"> <span>
-								HI 58° LO 56° </span>
+						class="left-topbar-item flex-wr-s-c"> 
 					</span></li>
 
-					<li class="left-topbar"><a href="#" class="left-topbar-item">
-							About </a> <a href="#" class="left-topbar-item"> Contact </a> <a
-						href="#" class="left-topbar-item"> Sing up </a> <a href="#"
+					<li class="left-topbar"> <a
+						href="#" class="left-topbar-item"> Sign up </a> <a href="#"
 						class="left-topbar-item"> Log in </a></li>
 
 					<li class="right-topbar"><a href="#"> <span

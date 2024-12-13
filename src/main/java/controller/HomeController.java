@@ -35,7 +35,7 @@ public class HomeController extends HttpServlet {
 		request.setAttribute("menus", menu);
 		newsDAO daoo = new newsDAO();
 		List<News> news = daoo.getNewsAll();
-
+		request.setAttribute("menus", menu);
 		request.setAttribute("newss", news);
 		request.getRequestDispatcher("Home.jsp").forward(request, response);
 		
