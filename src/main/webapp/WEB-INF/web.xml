@@ -3,17 +3,20 @@
   <display-name>doan1</display-name>
   <welcome-file-list>
     <welcome-file>home</welcome-file>
+   
   </welcome-file-list>
   <servlet>
     <description></description>
     <display-name>Menu</display-name>
-    <servlet-name>Menu</servlet-name>
+    <servlet-name>Menu</servlet-name>   
     <servlet-class>model.Menu</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>Menu</servlet-name>
     <url-pattern>/Menu</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>menuDAO</display-name>
@@ -24,6 +27,7 @@
     <servlet-name>menuDAO</servlet-name>
     <url-pattern>/menuDAO</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>HomeController</display-name>
@@ -54,6 +58,7 @@
     <servlet-name>loginDAO</servlet-name>
     <url-pattern>/loginDAO</url-pattern>
   </servlet-mapping>
+ 
   <servlet>
     <description></description>
     <display-name>AdminController</display-name>
@@ -154,4 +159,9 @@
     <servlet-name>DeleteNewsServlet</servlet-name>
     <url-pattern>/DeleteNewsServlet</url-pattern>
   </servlet-mapping>
+  
+ <welcome-file-list>
+ <welcome-file>CommentServlet</welcome-file>
+ </welcome-file-list>
+  
 </web-app>
