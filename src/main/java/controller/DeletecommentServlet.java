@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import dal.CommentDAO;
+
 /**
  * Servlet implementation class DeletecommentServlet
  */
@@ -27,7 +29,11 @@ public class DeletecommentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String cmtid_S = request.getParameter("cmtid");
+		int cmtid = Integer.parseInt(cmtid_S);
+		CommentDAO cd = new CommentDAO();
+		cd.delete(cmtid);
+		response.sendRedirect("CommentServlet");
 	}
 
 	/**
