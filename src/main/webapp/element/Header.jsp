@@ -39,7 +39,7 @@
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<div class="topbar">
-				<div class="content-topbar container h-100">
+				<div class="content-topbar container h-100" style="padding-left: 180px">
 					<div class="left-topbar">
 						<span class="left-topbar-item flex-wr-s-c"> 
 						</span> 
@@ -119,7 +119,7 @@
 							src="images/icons/logo-01.png" alt="LOGO">
 						</a>
 
-						<ul class="main-menu">
+						<ul class="main-menu" style="padding-left: 165px;">
 							<c:forEach items="${menus}" var="item">
 								<li class="main-menu-active"><a href="index.html">${item.menuname }</a></li>
 							</c:forEach>

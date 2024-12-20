@@ -154,4 +154,14 @@
     <servlet-name>DeleteNewsServlet</servlet-name>
     <url-pattern>/DeleteNewsServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchController</display-name>
+    <servlet-name>SearchController</servlet-name>
+    <servlet-class>controller.SearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchController</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
 </web-app>
