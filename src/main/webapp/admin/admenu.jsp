@@ -3,8 +3,8 @@
            <%@ page import="jakarta.servlet.http.HttpServlet"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script>
-function doDelete(menuid){
-	if(confirm("are you sure to delete menu with id = " + menuid)){
+function doDelete(userid){
+	if(confirm("are you sure to delete user with id = " + userid)){
 		window.location = "DeleteMenuServlet?menuid="+ menuid;
 	}
 }

@@ -6,12 +6,12 @@ public class user {
 	private String password;
 	private String phone;
 	private String address;
-	private int role;
+	private String role;
 	public user() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public user(int userid, String username, String password, String phone, String address, int role) {
+	public user(int userid, String username, String password, String phone, String address,String role) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -50,10 +50,10 @@ public class user {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(int role) {
+	public void setRole(String  role) {
 		this.role = role;
 	}
 	@Override

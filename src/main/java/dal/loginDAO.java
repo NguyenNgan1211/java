@@ -28,7 +28,7 @@ public class loginDAO {
                     rs.getString(3),
                     rs.getString(4),
                     rs.getString(5),
-                    rs.getInt(6)
+                    rs.getString(6)
                 );
             }
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class loginDAO {
                     rs.getString(3),
                     rs.getString(4),
                     rs.getString(5),
-                    rs.getInt(6)
+                    rs.getString(6)
                 );
             }
         } catch (Exception e) {
