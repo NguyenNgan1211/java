@@ -49,7 +49,7 @@ public class newsDAO {
     			int authorid, menuid;
     			newstitle = rs.getString("newstitle");
     			newscontent = rs.getString("newscontent");
-    			 image = rs.getString(" image");
+    			 image = rs.getString("image");
     			 authorid = rs.getInt("authorid");
     			 menuid = rs.getInt("menuid");
     			News m = new News(newsid,newstitle,newscontent,authorid,menuid,image);
@@ -128,6 +128,27 @@ public class newsDAO {
         }
         return null;
     }
+    public List<News> searchByNewstitle(String txtSearch) {
+        List<News> list = new ArrayList<>();
+        String sql = "SELECT * FROM news WHERE newstitle LIKE ?";
+        try (Connection connection = DBContext.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, "%" + txtSearch + "%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new News(rs.getInt(1),
+                                  rs.getString(2),
+                                  rs.getString(3),
+                                  rs.getInt(4),
+                                  rs.getInt(5),
+                                  rs.getString(6)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
     	newsDAO dao = new newsDAO();
 		List<News> cate = dao.getNewsAll();
