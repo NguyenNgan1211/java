@@ -50,17 +50,16 @@ public class UpdatecommentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		CommentDAO cd = new CommentDAO();
 		String cmtid_S = request.getParameter("cmtid");
-		String userid_S = request.getParameter("userid");
-		String newid_S = request.getParameter("newid");
+		String userid = request.getParameter("userid");
+		String newid = request.getParameter("newid");
 		String content = request.getParameter("content");
 		String status = request.getParameter("status");
 		Date created_at = Date.valueOf("created_at"); 
 		
-		int cmtid,userid,newid;
+		int cmtid;
 		
 		cmtid = Integer.parseInt(cmtid_S);
-		userid = Integer.parseInt(userid_S);
-		newid = Integer.parseInt(newid_S); 
+		 
 		
 		Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
 		System.out.println("Received userid: " + cmtid);

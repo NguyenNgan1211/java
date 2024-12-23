@@ -58,7 +58,7 @@ public class AddcommentServlet extends HttpServlet {
 		created_at =  Date.valueOf(created_atS);
 		Comments c= cd.getCommentById(cmtid);
 		if(c == null) {
-			c = new Comments(cmtid,userid,newid,content,status,created_at,null,null);
+			c = new Comments(cmtid,userid,newid,content,status,created_at);
 			cd.insert(c);
 			request.getRequestDispatcher("/comment").forward(request, response);
 		}else {

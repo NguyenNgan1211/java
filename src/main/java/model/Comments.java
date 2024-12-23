@@ -11,15 +11,13 @@ public class Comments {
 	private String content;
 	private String status;
 	private Date created_at;
-	private user user;
-	private News News;
+
 	public Comments() {
 	}
 
 	
 
-	public Comments(int cmtid, int userid, int newid, String content, String status, Date created_at,
-			user user,News news) {
+	public Comments(int cmtid, int userid, int newid, String content, String status, Date created_at) {
 		
 		this.cmtid = cmtid;
 		this.userid = userid;
@@ -27,17 +25,9 @@ public class Comments {
 		this.content = content;
 		this.status = status;
 		this.created_at = created_at;
-		this.user = user;
-		this.News = news;
+		
 	}
-	public Comments(int cmtid, int userid, int newid, String content, String status, Date created_at) {
-	    this.cmtid = cmtid;
-	    this.userid = userid;
-	    this.newid = newid;
-	    this.content = content;
-	    this.status = status;
-	    this.created_at = created_at;
-	}
+	
 	
 	public int getCmtid() {
 		return cmtid ;
@@ -75,22 +65,11 @@ public class Comments {
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
-	public user getUser() {
-		return user;
-	}
-	public void setUser(user user) {
-		this.user = user;
-	}
-	public News getNews() {
-		return News;
-	}
-	public void setNews(News news) {
-		News = news;
-	}
+	
 	@Override
 	public String toString() {
 		return "Comments [cmtid=" + cmtid + ", userid=" + userid + ", newid=" + newid + ", content=" + content
-				+ ", status=" + status + ", created_at=" + created_at + ", user=" + user + ", News=" + News + "]";
+				+ ", status=" + status + ", created_at=" + created_at +  "]";
 	}
 
 

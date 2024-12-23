@@ -15,7 +15,7 @@ import model.user;
 public class CommentDAO extends DBContext {
 	public List<Comments> getCommentAll(){
 		List<Comments> list = new ArrayList<>();
-//		CommentDAO cd = new CommentDAO();
+	CommentDAO cd = new CommentDAO();
 		String sql = "SELECT `comments`.`cmtid`, `comments`.`userid`, `comments`.`newid`, `comments`.`content`, `comments`.`status`, `comments`.`created_at` "
 	            + "FROM `qlsv`.`comments` "
 	            + "WHERE 1 = 1";
@@ -39,7 +39,7 @@ public class CommentDAO extends DBContext {
             	newsDAO newsDAO = new newsDAO();
             	user user = userDAO.getUserById(userid);  // Giả sử có phương thức này
             	News news = newsDAO.getNewsById(newid); 
-            	Comments c= new Comments(cmtid,userid,newid,content,status,created_at,user,news);
+            	Comments c= new Comments(cmtid,userid,newid,content,status,created_at);
             	list.add(c);
 		}
 	}catch(SQLException e) {
@@ -60,7 +60,7 @@ public class CommentDAO extends DBContext {
     	            String status = rs.getString("status");
     	            Date created_at = rs.getDate("created_at");
     				
-    				Comments c = new Comments(cmtid,userid,newid,content,status,created_at,null,null);
+    				Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
     				return c;
     			}
 		
