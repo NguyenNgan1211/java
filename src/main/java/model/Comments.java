@@ -69,7 +69,7 @@ public class Comments {
 	@Override
 	public String toString() {
 		return "Comments [cmtid=" + cmtid + ", userid=" + userid + ", newid=" + newid + ", content=" + content
-				+ ", status=" + status + ", created_at=" + created_at +  "]";
+				+ ", status=" + status + ", created_at=" + created_at + "]";
 	}
 
 

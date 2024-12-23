@@ -49,7 +49,7 @@
 									    <td class="text-center">${items.created_at}</td>
 
 										<td class="text-center">
-											<a href="UpdatecommentServlet?cmtid=${items.cmtid}" class="btn btn-primary btn-sm"
+											<a href="${pageContext.request.contextPath}/admin/UpdatecommentServlet?cmtid=${items.cmtid}" class="btn btn-primary btn-sm"
 										   title="Sửa bình luận"><i class="bi bi-pencil"></i></a>
 											<a href="#" onclick="doDelete('${items.cmtid}')" class="btn btn-danger btn-sm"
 										   title="Xóa bình luận"><i class="bi bi-trash"></i></a>

@@ -35,10 +35,8 @@ public class CommentDAO extends DBContext {
             	content = rs.getString("content");
             	status = rs.getString("status");
             	created_at = rs.getDate("created_at");
-            	UserDAO userDAO = new UserDAO();
-            	newsDAO newsDAO = new newsDAO();
-            	user user = userDAO.getUserById(userid);  // Giả sử có phương thức này
-            	News news = newsDAO.getNewsById(newid); 
+            	
+            	
             	Comments c= new Comments(cmtid,userid,newid,content,status,created_at);
             	list.add(c);
 		}

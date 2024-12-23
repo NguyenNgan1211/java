@@ -16,7 +16,7 @@ import dal.CommentDAO;
 /**
  * Servlet implementation class UpdatecommentServlet
  */
-@WebServlet("/UpdatecommentServlet")
+@WebServlet("/admin/UpdatecommentServlet")
 public class UpdatecommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,21 +50,28 @@ public class UpdatecommentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		CommentDAO cd = new CommentDAO();
 		String cmtid_S = request.getParameter("cmtid");
-		String userid = request.getParameter("userid");
-		String newid = request.getParameter("newid");
+		String userid_S = request.getParameter("userid");
+		String newid_S= request.getParameter("newid");
 		String content = request.getParameter("content");
 		String status = request.getParameter("status");
-		Date created_at = Date.valueOf("created_at"); 
+		String createdAtStr = request.getParameter("created_at");
 		
 		int cmtid;
-		
+		int userid;
+		int newid;
 		cmtid = Integer.parseInt(cmtid_S);
-		 
-		
+		 userid= Integer.parseInt(userid_S);
+		 newid = Integer.parseInt(newid_S);
+		 if (createdAtStr == null || !createdAtStr.matches("\\d{4}-\\d{2}-\\d{2}")) {
+		        throw new IllegalArgumentException("Invalid date format. Expected YYYY-MM-DD.");
+		    }
+		    Date created_at = Date.valueOf(createdAtStr);
 		Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
 		System.out.println("Received userid: " + cmtid);
 		cd.update(c);
-		response.sendRedirect(request.getContextPath()+"/admin/comment");
+	
+
+		response.sendRedirect(request.getContextPath()+"/comment");
 	}
 
 }
