@@ -15,7 +15,7 @@ import dal.CommentDAO;
 /**
  * Servlet implementation class AddcommentServlet
  */
-@WebServlet("/AddcommentServlet")
+@WebServlet("/admin/AddcommentServlet")
 public class AddcommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,6 +31,15 @@ public class AddcommentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		CommentDAO cd = new CommentDAO();
 		String cmtid_S = request.getParameter("cmtid");
@@ -51,21 +60,12 @@ public class AddcommentServlet extends HttpServlet {
 		if(c == null) {
 			c = new Comments(cmtid,userid,newid,content,status,created_at,null,null);
 			cd.insert(c);
-			request.getRequestDispatcher("CommentServlet").forward(request, response);
+			request.getRequestDispatcher("/comment").forward(request, response);
 		}else {
 			String erorr = cmtid +" Đã tồn tại, xin mời chọn ID khác";
 			request.setAttribute("erorr", erorr);
-			request.getRequestDispatcher("admin/addcomment.jsp").forward(request, response);
+			request.getRequestDispatcher("/comment").forward(request, response);
 		}
-	}
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

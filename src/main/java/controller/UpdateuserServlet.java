@@ -14,7 +14,7 @@ import dal.UserDAO;
 /**
  * Servlet implementation class UpdateuserSeervlet
  */
-@WebServlet("/UpdateuserSeervlet")
+@WebServlet("/admin/UpdateuserServlet")
 public class UpdateuserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -37,7 +37,6 @@ public class UpdateuserServlet extends HttpServlet {
 		user c = cd.getUserById(userid);
 		request.setAttribute("user", c);
 		request.getRequestDispatcher("/admin/updateuser.jsp").forward(request, response);
-		
 	}
 
 	/**
@@ -52,11 +51,14 @@ public class UpdateuserServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		String role = request.getParameter("role");
+
 		int userid;
 		userid = Integer.parseInt(userid_S);
 		user c= new user(userid, username,password,phone,address,role);
+		System.out.println("Received userid: " + userid);
+
 		cd.update(c);
-		response.sendRedirect("UserServlet");
+		response.sendRedirect(request.getContextPath() + "/admin/user");
 		
 	}
 

@@ -20,6 +20,15 @@ public class user {
 		this.address = address;
 		this.role = role;
 	}
+	
+	public user(String username, String password, String phone, String address, String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.phone = phone;
+		this.address = address;
+		this.role = role;
+	}
 	public int getUserid() {
 		return userid;
 	}

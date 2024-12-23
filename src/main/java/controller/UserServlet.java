@@ -15,7 +15,7 @@ import dal.UserDAO;
 /**
  * Servlet implementation class UserServlet
  */
-@WebServlet("/UserServlet")
+@WebServlet("/admin/user")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +35,7 @@ public class UserServlet extends HttpServlet {
 		UserDAO cd = new UserDAO();
 		List<user> list = cd.getUserAll();
 		request.setAttribute("data", list);
-		request.getRequestDispatcher("admin/userlist.jsp").forward(request, response);
+		request.getRequestDispatcher("/admin/userlist.jsp").forward(request, response);
 	}
 
 	/**

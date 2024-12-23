@@ -12,7 +12,7 @@ import dal.UserDAO;
 /**
  * Servlet implementation class DeleteuserServlet
  */
-@WebServlet("/DeleteuserServlet")
+@WebServlet("/admin/DeleteuserServlet")
 public class DeleteuserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +33,7 @@ public class DeleteuserServlet extends HttpServlet {
 		int userid = Integer.parseInt(Userid_S);
 		UserDAO cd = new UserDAO();
 		cd.delete(userid);
-		response.sendRedirect("UserServlet");
+		response.sendRedirect("user");
 	}
 
 	/**

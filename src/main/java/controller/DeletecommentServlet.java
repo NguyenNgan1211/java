@@ -25,15 +25,15 @@ public class DeletecommentServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, Htt00pServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		String cmtid_S = request.getParameter("cmtid");
 		int cmtid = Integer.parseInt(cmtid_S);
 		CommentDAO cd = new CommentDAO();
 		cd.delete(cmtid);
-		response.sendRedirect("CommentServlet");
+		response.sendRedirect("comment");
 	}
 
 	/**

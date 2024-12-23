@@ -95,6 +95,7 @@ public class CommentDAO extends DBContext {
 				ps.setInt(2, c.getNewid());
 				ps.setString(3, c.getContent());
 				ps.setString(4, c.getStatus());
+				ps.setDate(5, c.getCreated_at());
 				ps.setInt(6, c.getCmtid());
 				ps.executeUpdate();
 				

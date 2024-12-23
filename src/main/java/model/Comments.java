@@ -30,6 +30,14 @@ public class Comments {
 		this.user = user;
 		this.News = news;
 	}
+	public Comments(int cmtid, int userid, int newid, String content, String status, Date created_at) {
+	    this.cmtid = cmtid;
+	    this.userid = userid;
+	    this.newid = newid;
+	    this.content = content;
+	    this.status = status;
+	    this.created_at = created_at;
+	}
 	
 	public int getCmtid() {
 		return cmtid ;

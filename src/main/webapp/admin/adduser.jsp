@@ -78,7 +78,7 @@ form button:active {
     <h2 style="margin-bottom: 20px;">Thêm người dùng mới</h2>
     <h3 style="color: red; margin-bottom: 20px;">${error }</h3>
     <form action="AdduserServlet" method="post" style="text-align: left; width: 300px;">
-    
+ 		
         <div style="margin-bottom: 15px;">
             <label for="username" style="display: block; margin-bottom: 5px;">Họ và tên</label>
             <input type="text" id="username" name="username" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />

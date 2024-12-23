@@ -3,19 +3,19 @@
      <%@ page import="jakarta.servlet.http.HttpServlet"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="adheader.jsp" />
-<script>
-function doDelete(cmtid){
-	if(confirm("are you sure to delete comments with id = " + cmtid)){
-		window.location = "DeletecommentServlet?cmtid="+ cmtid;
-	}
-}
+<script type="text/javascript">
+    function doDelete(cmtid) {
+        if (confirm("Bạn có chắc muốn xóa không? " +cmtid)) {
+            window.location ="${pageContext.request.contextPath}/DeletecommentServlet?cmtid=" + cmtid;
+        }
+    }
 </script>
 <main id="main" class="main">
 	<div class="pagetitle">
 		<h2>Danh sách các bình luận</h2>
 	</div>
 	<p>
-		<a href="${pageContext.request.contextPath}/admin/addcomment.jsp" type="button" class="btn btn-success">
+		<a href="${pageContext.request.contextPath}/admin/addcomment.jsp"  type="button" class="btn btn-success">
 			<i class="bi bi-file-earmark-text me-1"></i>Thêm bình luận
 		</a>
 	</p>

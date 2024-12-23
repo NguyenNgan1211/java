@@ -58,17 +58,17 @@ public class UserDAO extends DBContext {
 		}
 		return null;
 	}
-	public void insert(user c) {
+	public void insert(String username,String password, String phone,String address, String role) {
 		String sql = "insert into `user`(`username`,`password`,`phone`,`address`,`role`) values \r\n"
-				+"(?,?,?,?,?,?)";
+				+"(?,?,?,?,?)";
 		try {Connection connection = DBContext.getConnection();
 		PreparedStatement ps = connection.prepareStatement(sql);
 		//ps.setInt(1,c.getUserid());
-		ps.setString(1, c.getUsername());
-		ps.setString(2, c.getPassword());
-		ps.setString(3, c.getPhone());
-		ps.setString(4, c.getAddress()); 
-		ps.setString(5, c.getRole());
+		ps.setString(1,username);
+		ps.setString(2,password);
+		ps.setString(3,phone);
+		ps.setString(4,address); 
+		ps.setString(5,role);
 		ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -76,17 +76,18 @@ public class UserDAO extends DBContext {
 	}
 	public void update(user c) {
 		String sql = "update `user` \r\n"
-				+ "set `username` =? ,`password` =?,`phone` =?,`address`=?,`role`=?"
+				+ "set `username` =? ,`password` =?,`phone` =?,`address`=?,`role`=? "
 				+"where `userid` = ?;";
-		try {Connection connection = DBContext.getConnection();
-		PreparedStatement ps = connection.prepareStatement(sql);
+		try (Connection connection = DBContext.getConnection();
+		PreparedStatement ps = connection.prepareStatement(sql))
+		{
 			ps.setString(1, c.getUsername());
 			ps.setString(2, c.getPassword());
 			ps.setString(3, c.getPhone());
 			ps.setString(4, c.getAddress());
 			ps.setString(5, c.getRole());
 			ps.setInt(6,c.getUserid());
-			
+			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}

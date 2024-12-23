@@ -19,7 +19,7 @@ import dal.newsDAO;
 /**
  * Servlet implementation class CommentServlet
  */
-@WebServlet("/CommentServlet")
+@WebServlet("/admin/comment")
 public class CommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

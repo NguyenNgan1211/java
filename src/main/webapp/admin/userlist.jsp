@@ -17,7 +17,7 @@
 		<h2>Danh sách các người dùng</h2>
 	</div>
 	<p>
-		<a href="admin/adduser.jsp" type="button" class="btn btn-success">
+		<a href="${pageContext.request.contextPath}/admin/adduser.jsp" type="button" class="btn btn-success">
     <i class="bi bi-file-earmark-text me-1"></i>Thêm người dùng
 </a>
 	</p>
@@ -51,7 +51,7 @@
 									    <td class="text-center">${list.role}</td>
 
 										<td class="text-center">
-											<a href="UpdateuserServlet?userid=${list.userid}" class="btn btn-primary btn-sm"
+											<a href="${pageContext.request.contextPath}/admin/UpdateuserServlet?userid=${list.userid}" class="btn btn-primary btn-sm"
 										   title="Sửa người dùng"><i class="bi bi-pencil"></i></a>
 											<a href="#" onclick="doDelete('${list.userid}')" class="btn btn-danger btn-sm"
 										   title="Xóa người dùng"><i class="bi bi-trash"></i></a>

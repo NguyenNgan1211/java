@@ -169,4 +169,26 @@
     <servlet-name>SearchController</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>controller.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>CommentServlet</display-name>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>controller.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/comment</url-pattern>
+  </servlet-mapping>
+  
+ 
 </web-app>
