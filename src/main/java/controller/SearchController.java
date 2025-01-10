@@ -55,7 +55,7 @@ public class SearchController extends HttpServlet {
 		    }
 		    
 		    request.setAttribute("newss", list);
-		    request.setAttribute("menu1", listm);
+		    request.setAttribute("menus", listm);
 
 		    request.getRequestDispatcher("Home.jsp").forward(request, response);
     	

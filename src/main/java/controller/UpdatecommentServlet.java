@@ -60,6 +60,7 @@ public class UpdatecommentServlet extends HttpServlet {
 		int userid;
 		int newid;
 		cmtid = Integer.parseInt(cmtid_S);
+
 		 userid= Integer.parseInt(userid_S);
 		 newid = Integer.parseInt(newid_S);
 		 if (createdAtStr == null || !createdAtStr.matches("\\d{4}-\\d{2}-\\d{2}")) {
@@ -67,6 +68,10 @@ public class UpdatecommentServlet extends HttpServlet {
 		    }
 		    Date created_at = Date.valueOf(createdAtStr);
 		Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
+
+		 
+		
+//		Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
 		System.out.println("Received userid: " + cmtid);
 		cd.update(c);
 	
