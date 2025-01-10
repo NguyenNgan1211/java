@@ -147,6 +147,7 @@
 									<div class="row">
 										<c:if test="${not empty newss}">
 											<c:forEach items="${newss}" var="news">
+											<c:if test="${news.menuid==item.menuid }">
 												<div class="col-sm-6 p-r-25 p-r-15-sr991">
 													<div class="m-b-30">
 														<a href="blog-detail-01.html"
@@ -165,6 +166,7 @@
 														</div>
 													</div>
 												</div>
+												</c:if>
 											</c:forEach>
 										</c:if>
 										<c:if test="${empty newss}">

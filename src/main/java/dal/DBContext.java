@@ -10,7 +10,7 @@ public class DBContext {
     public static Connection getConnection() {
         String user = "root";
         String pass = "";  // Update this if there's a root password in MySQL
-        String url = "jdbc:mysql://localhost:3306/qlsv";  // Ensure correct port number
+        String url = "jdbc:mysql://localhost:3307/qlsv";  // Ensure correct port number
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
