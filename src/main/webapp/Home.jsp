@@ -135,7 +135,7 @@
 							<div
 								class="tab01-head how2 how2-cl1 bocl12 flex-s-c m-r-10 m-r-0-sr991">
 								<h3 class="f1-m-2 cl12 tab01-title">
-									<li class="main-menu-active"><a href="index.html">${item.menuname}</a>
+									<li class="main-menu-active"><a href="Detail">${item.menuname}</a>
 									</li>
 								</h3>
 							</div>
@@ -150,13 +150,13 @@
 											<c:if test="${news.menuid==item.menuid }">
 												<div class="col-sm-6 p-r-25 p-r-15-sr991">
 													<div class="m-b-30">
-														<a href="blog-detail-01.html"
+														<a href="DetailControll?newsid=${news.newsid}"
 															class="wrap-pic-w hov1 trans-03"> <img
 															src="asset${news.image}" alt="IMG">
 														</a>
 														<div class="p-t-20">
 															<h5 class="p-b-5">
-																<a href="blog-detail-01.html"
+																<a href="${pageContext.request.contextPath}/DetailControll?newsid=${news.newsid}"
 																	class="f1-m-3 cl2 hov-cl10 trans-03">
 																	${news.newstitle} </a>
 															</h5>

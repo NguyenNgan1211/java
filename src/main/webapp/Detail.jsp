@@ -6,26 +6,26 @@
 <div class="col-md-10 col-lg-8 p-b-30">
 					<div class="p-r-10 p-r-0-sr991">
 						<!-- Blog Detail -->
-						<c:set value="${Detail}" var="m" />
+						<c:set value="${detail}" var="g" />
 						<div class="p-b-70">
 							<a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
 								Technology
 							</a>
 
 							<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
-								${m.newstitle }
+								${g.newstitle}
 							</h3>
 							
 							<div class="flex-wr-s-s p-b-40">
 								<span class="f1-s-3 cl8 m-r-15">
 									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										by John Alvarado
+										${g.authorid}
 									</a>
 
 									<span class="m-rl-3">-</span>
 
 									<span>
-										Feb 18
+										${g.menuid}
 									</span>
 								</span>
 
@@ -40,11 +40,11 @@
 			
 
 							<div class="wrap-pic-max-w p-b-30">
-								<img src=">${m.image}" alt="IMG">
+								<img src=">${g.image}" alt="IMG">
 							</div>
 
 							<p class="f1-s-11 cl6 p-b-25">
-								${m.newscontent  }
+								${g.newscontent}
 							</p>
 
 							
