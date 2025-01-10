@@ -39,7 +39,7 @@ public class DetailControll extends HttpServlet {
 		    response.sendError(HttpServletResponse.SC_NOT_FOUND, "Bài viết không tồn tại.");
 		    return;
 		}
-		request.setAttribute("Detail", g);
+		request.setAttribute("Detail", g); 
 		request.getRequestDispatcher("/Detail.jsp").forward(request, response);
 	}
 

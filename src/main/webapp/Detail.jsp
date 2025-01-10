@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="element/Header.jsp" />
 
 <div class="col-md-10 col-lg-8 p-b-30">
 					<div class="p-r-10 p-r-0-sr991">
 						<!-- Blog Detail -->
-						<c:set value="${detail}" var="g" />
+						<c:set value="${Detail}" var="g" />
 						<div class="p-b-70">
 							<a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
 								Technology
