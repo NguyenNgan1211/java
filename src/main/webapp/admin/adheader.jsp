@@ -280,7 +280,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a href="menu" class="nav-link collapsed"  data-bs-target="#components-nav" data-bs-toggle="collapse" >
+        <a href="${pageContext.request.contextPath}/menu" class="nav-link collapsed"  data-bs-target="#components-nav" data-bs-toggle="collapse" >
           <i  class="bi bi-menu-button-wide"></i><span>Quản lý danh mục</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -298,10 +298,10 @@
         </ul>
       </li><!-- End Components Nav -->
 	<li class="nav-item">
-        <a href="news" class="nav-link collapsed"  data-bs-target="#news-nav" data-bs-toggle="collapse" >
+        <a href="${pageContext.request.contextPath}/news" class="nav-link collapsed"  data-bs-target="#news-nav" data-bs-toggle="collapse" >
           <i  class="bi bi-menu-button-wide"></i><span>Quản lý bài viết</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="newss-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="news">
               <i class="bi bi-circle"></i><span>Thêm bài viết</span>
@@ -319,7 +319,7 @@
         <a class="nav-link collapsed"  data-bs-target="#forms-nav" data-bs-toggle="collapse" href="comment">
           <i  class="bi bi-menu-button-wide"></i><span>Quản lý bình luận</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="comments-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
              <a href="${pageContext.request.contextPath}/admin/comment">
               <i class="bi bi-circle"></i><span>Thêm bình luận</span>

@@ -32,6 +32,8 @@
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="asset/css/main.css">
 <!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
 </head>
 <body class="animsition">
 
@@ -45,12 +47,13 @@
 						</span> 
 						
 						<c:if test="${ sessionScope.user!=null}">
-
+				
 						<a href="admin" class="left-topbar-item"> Admin </a>
 						
 						<a href="LogoutServlet" class="left-topbar-item"> Đăng xuất </a> 
 						</c:if>
 						<c:if test="${sessionScope.user==null}">
+				
 						<a href="#" class="left-topbar-item"> Đăng ký </a> 
 						<a href="login.jsp" class="left-topbar-item"> Đăng nhập </a>
 						</c:if>
