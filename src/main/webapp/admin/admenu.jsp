@@ -3,8 +3,8 @@
            <%@ page import="jakarta.servlet.http.HttpServlet"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script>
-function doDelete(userid){
-	if(confirm("are you sure to delete user with id = " + userid)){
+function doDelete(menuid){
+	if(confirm("are you sure to delete user with id = " + menuid)){
 		window.location = "DeleteMenuServlet?menuid="+ menuid;
 	}
 }
@@ -29,7 +29,7 @@ function doDelete(userid){
 								<tr>
 									<th class="col-1 text-center">#</th>
 									<th class="col-1 text-center">Menuname</th>
-									<td class="col-1 text-center">Menudescription</td>
+									<td class="col-1 text-center fw-bold">Menudescription</td>
 									<th class="col-2 text-center">Chức năng</th>
 								</tr>
 							</thead>
