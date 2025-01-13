@@ -8,10 +8,12 @@
 <script type="text/javascript">
     function doDelete(userid) {
         if (confirm("Bạn có chắc muốn xóa không? " + userid)) {
-            window.location = "DeleteuserServlet?userid=" + userid;
+            window.location = "${pageContext.request.contextPath}/admin/DeleteuserServlet?userid=" + userid;
         }
     }
+    
 </script>
+
 	<main id="main" class="main">
 	<div class="pagetitle">
 		<h2>Danh sách các người dùng</h2>

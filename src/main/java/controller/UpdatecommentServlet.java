@@ -71,8 +71,7 @@ public class UpdatecommentServlet extends HttpServlet {
 
 		 
 		
-//		Comments c = new Comments(cmtid,userid,newid,content,status,created_at);
-		System.out.println("Received userid: " + cmtid);
+
 		cd.update(c);
 	
 

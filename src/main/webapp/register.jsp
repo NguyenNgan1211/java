@@ -47,10 +47,10 @@
 						class="img-fluid" alt="Sample image">
 				</div>
 				<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-					<form action="login" method="post">
+					<form action="register" method="post">
 						<div
 							class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-							<p class="lead fw-normal mb-0 me-3">Sign in with asdf</p>
+							<p class="lead fw-normal mb-0 me-3">Sign up</p>
 							<button type="button" data-mdb-button-init data-mdb-ripple-init
 								class="btn btn-primary btn-floating mx-1">
 								<i class="fab fa-facebook-f"></i>
@@ -72,20 +72,33 @@
 						</div>
 
 						<!-- Email input -->
-						<div data-mdb-input-init class="form-outline mb-4">
-							<input name="user" type="text" id="inputEmail"
-								class="form-control form-control-lg"
-								placeholder="Enter a valid user" /> <label class="form-label"
-								for="form3Example3">User</label>
-						</div>
+						<!-- Username input -->
+<div data-mdb-input-init class="form-outline mb-4">
+    <input name="username" type="text" id="inputUsername" class="form-control form-control-lg" placeholder="Enter a valid user" />
+    <label class="form-label" for="inputUsername">Họ và tên</label>
+</div>
 
-						<!-- Password input -->
-						<div data-mdb-input-init class="form-outline mb-3">
-							<input name="pass" type="password" id="inputPassword"
-								class="form-control form-control-lg"
-								placeholder="Enter password" /> <label class="form-label"
-								for="form3Example4">Password</label>
-						</div>
+<!-- Password input -->
+<div data-mdb-input-init class="form-outline mb-3">
+    <input name="password" type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Enter password" />
+    <label class="form-label" for="inputPassword">Mật khẩu</label>
+</div>
+
+<!-- Phone input -->
+<div data-mdb-input-init class="form-outline mb-3">
+    <input name="phone" type="tel" id="inputPhone" class="form-control form-control-lg" placeholder="Enter phone number" />
+    <label class="form-label" for="inputPhone">Số điện thoại</label>
+</div>
+
+<!-- Email input -->
+<div data-mdb-input-init class="form-outline mb-3">
+    <input name="address" type="text" id="address" class="form-control form-control-lg" placeholder="Enter address" />
+    <label class="form-label" for="address">Địa chỉ</label>
+</div>
+<!-- Hidden role input -->
+<input type="hidden" name="role" value="0" />
+
+						
 						<c:if test="${not empty error}">
 							<p style="color: red">${error}</p>
 						</c:if>
@@ -96,16 +109,14 @@
 									id="form2Example3" /> <label class="form-check-label"
 									for="form2Example3"> Remember me </label>
 							</div>
-							<a href="#!" class="text-body">Forgot password?</a>
+						
 						</div>
 
 						<div class="text-center text-lg-start mt-4 pt-2">
 							<button type="submit" data-mdb-button-init data-mdb-ripple-init
 								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-							<p class="small fw-bold mt-2 pt-1 mb-0">
-								Don't have an account? <a href="${pageContext.request.contextPath}/register.jsp" class="link-danger">Register</a>
-							</p>
+								style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+							
 						</div>
 
 					</form>

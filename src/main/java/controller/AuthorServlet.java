@@ -5,22 +5,24 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.user;
+import model.Author;
 
 import java.io.IOException;
 import java.util.List;
 
-import dal.UserDAO;
+import dal.AuthorDAO;
 
-
-@WebServlet("/admin/user")
-public class UserServlet extends HttpServlet {
+/**
+ * Servlet implementation class AuthorServlet
+ */
+@WebServlet("/admin/author")
+public class AuthorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public AuthorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,15 +32,14 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UserDAO cd = new UserDAO();
-		List<user> list = cd.getUserAll();
+		AuthorDAO cd = new AuthorDAO();
+		List<Author> list =  cd.getAuthorAll();
 		request.setAttribute("data", list);
-		request.getRequestDispatcher("/admin/userlist.jsp").forward(request, response);
+
+		request.getRequestDispatcher("/admin/authorlist.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	
