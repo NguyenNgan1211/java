@@ -47,7 +47,7 @@
 						class="img-fluid" alt="Sample image">
 				</div>
 				<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-					<form action="register" method="post">
+				
 						<div
 							class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
 							<p class="lead fw-normal mb-0 me-3">Sign up</p>
@@ -73,33 +73,36 @@
 
 						<!-- Email input -->
 						<!-- Username input -->
-<div data-mdb-input-init class="form-outline mb-4">
-    <input name="username" type="text" id="inputUsername" class="form-control form-control-lg" placeholder="Enter a valid user" />
-    <label class="form-label" for="inputUsername">Họ và tên</label>
-</div>
-
-<!-- Password input -->
-<div data-mdb-input-init class="form-outline mb-3">
-    <input name="password" type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Enter password" />
-    <label class="form-label" for="inputPassword">Mật khẩu</label>
-</div>
-
-<!-- Phone input -->
-<div data-mdb-input-init class="form-outline mb-3">
-    <input name="phone" type="tel" id="inputPhone" class="form-control form-control-lg" placeholder="Enter phone number" />
-    <label class="form-label" for="inputPhone">Số điện thoại</label>
-</div>
-
-<!-- Email input -->
-<div data-mdb-input-init class="form-outline mb-3">
-    <input name="address" type="text" id="address" class="form-control form-control-lg" placeholder="Enter address" />
-    <label class="form-label" for="address">Địa chỉ</label>
-</div>
-<!-- Hidden role input -->
-<input type="hidden" name="role" value="0" />
-
-						
-						<c:if test="${not empty error}">
+			 <form action="RegisterServlet" method="post" style="text-align: left; width: 300px;">
+	 		
+	        <div style="margin-bottom: 15px;">
+	            <label for="username" style="display: block; margin-bottom: 5px;">Họ và tên</label>
+	            <input type="text" id="username" name="username" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	        </div>
+	          <div style="margin-bottom: 15px;">
+	            <label for="password" style="display: block; margin-bottom: 5px;">Mật khẩu</label>
+	            <input type="password" id="password" name="password" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	        </div>
+	          <div style="margin-bottom: 15px;">
+	            <label for="phone" style="display: block; margin-bottom: 5px;">Số điện thoại</label>
+	            <input type="text" id="phone" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	        </div>
+	          <div style="margin-bottom: 15px;">
+	            <label for="address" style="display: block; margin-bottom: 5px;">Địa chỉ</label>
+	            <input type="text" id="address" name="address" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	        </div>
+	          <div style="margin-bottom: 15px;">
+	        
+	            <input type="hidden" id="role" name="role" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	        </div>
+	        <div style="text-align: center;">
+	            <button type="submit" style="padding: 12px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+	                SAVE
+	            </button>
+	        </div>
+	    </form>
+							
+							<c:if test="${not empty error}">
 							<p style="color: red">${error}</p>
 						</c:if>
 						<div class="d-flex justify-content-between align-items-center">
@@ -112,14 +115,9 @@
 						
 						</div>
 
-						<div class="text-center text-lg-start mt-4 pt-2">
-							<button type="submit" data-mdb-button-init data-mdb-ripple-init
-								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-							
-						</div>
+						
 
-					</form>
+					
 				</div>
 			</div>
 		</div>
