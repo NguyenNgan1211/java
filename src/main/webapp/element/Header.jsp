@@ -52,9 +52,11 @@
 						
 						<a href="LogoutServlet" class="left-topbar-item"> Đăng xuất </a> 
 						</c:if>
+						
+						
+						
 						<c:if test="${sessionScope.user==null}">
-				
-						<a href="#" class="left-topbar-item"> Đăng ký </a> 
+						<a href="register.jsp" class="left-topbar-item"> Đăng ký </a> 
 						<a href="login.jsp" class="left-topbar-item"> Đăng nhập </a>
 						</c:if>
 						

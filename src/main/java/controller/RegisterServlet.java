@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
@@ -50,30 +50,32 @@ public class RegisterServlet extends HttpServlet {
 //	        String password = request.getParameter("password");
 //	        String phone = request.getParameter("phone");
 //	        String address = request.getParameter("address");
-//	        String role = request.getParameter("role");
+//	        String role = "0";
+//	       
 //	        String passwordmd5 = PasswordUtils.hashPassword(password);
-//	        RegisterDAO dao = new RegisterDAO();
-//	       boolean u = dao.register(username,passwordmd5,phone,address,role);
-//	        if(!u) {
-//				request.setAttribute("error", "Thông tin đăng ký sai");
-//				request.getRequestDispatcher("login").forward(request, response);
-//
-//}else {
-//	HttpSession session = request.getSession();
-//	session.setAttribute("user", u);
-//	response.sendRedirect("login");
-//}
-//	}
-		UserDAO cd = new UserDAO();
+//	         String passwordmd5 = PasswordUtils.hashPassword(password);
+//	       if(!u) {
+//				request.setAttribute("error", "Thông tin đăng nhập sai");
+//				request.getRequestDispatcher("login.jsp").forward(request, response);
+//			} else {
+//				HttpSession session = request.getSession();
+//				session.setAttribute("user", u);
+//				response.sendRedirect("login");
+//			}
 		
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String phone = request.getParameter("phone");
-		String address = request.getParameter("address");
-		String role = request.getParameter("role");
+			UserDAO cd = new UserDAO();
+		
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			String phone = request.getParameter("phone");
+			String address = request.getParameter("address");
+			String role = request.getParameter("role");
+			  String passwordmd5 = PasswordUtils.hashPassword(password);
+			  
+			cd.insert(username, passwordmd5, phone, address, role);
+			System.out.println("da them moi " );
+			response.sendRedirect("login.jsp");
+		}
 	
-		cd.insert(username, password, phone, address, role);
-		System.out.println("da them moi " );
-		request.getRequestDispatcher("/login").forward(request, response);
-}
+	
 }
