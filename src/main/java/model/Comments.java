@@ -11,7 +11,8 @@ public class Comments {
 	private String content;
 	private String status;
 	private Date created_at;
-
+	private String username;  // Thêm thuộc tính username
+    private String newstitle; // Thêm thuộc tính newstitle
 	public Comments() {
 	}
 
@@ -28,6 +29,34 @@ public class Comments {
 		
 	}
 	
+	  public Comments(int userid, int newid, String content, String status, Date created_at) {
+		super();
+		this.userid = userid;
+		this.newid = newid;
+		this.content = content;
+		this.status = status;
+		this.created_at = created_at;
+	}
+
+
+
+	public String getUsername() {
+	        return username;
+	    }
+
+	    public void setUsername(String username) {
+	        this.username = username;
+	    }
+
+	    // Getter và setter cho newstitle
+	    public String getNewstitle() {
+	        return newstitle;
+	    }
+
+	    public void setNewstitle(String newstitle) {
+	        this.newstitle = newstitle;
+	    }
+
 	
 	public int getCmtid() {
 		return cmtid ;

@@ -301,7 +301,7 @@
         <a href="${pageContext.request.contextPath}/news" class="nav-link collapsed"  data-bs-target="#news-nav" data-bs-toggle="collapse" >
           <i  class="bi bi-menu-button-wide"></i><span>Quản lý bài viết</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="newss-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="news-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="news">
               <i class="bi bi-circle"></i><span>Thêm bài viết</span>
@@ -316,17 +316,17 @@
         </ul>
       </li><!-- End Components Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed"  data-bs-target="#forms-nav" data-bs-toggle="collapse" href="comment">
+        <a class="nav-link collapsed"  data-bs-target="#comments-nav" data-bs-toggle="collapse" href="${pageContext.request.contextPath}/comment">
           <i  class="bi bi-menu-button-wide"></i><span>Quản lý bình luận</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="comments-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-             <a href="${pageContext.request.contextPath}/admin/comment">
+             <a href="${pageContext.request.contextPath}/comment">
               <i class="bi bi-circle"></i><span>Thêm bình luận</span>
             </a>
           </li>
           <li>
-            <a href="${pageContext.request.contextPath}/admin/comment">
+            <a href="${pageContext.request.contextPath}/comment">
               <i class="bi bi-circle"></i><span>Các bình luận</span>
             </a>
           </li>
@@ -335,7 +335,7 @@
       </li><!-- End Components Nav -->
       
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="user">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="${pageContext.request.contextPath}/user">
           <i class="bi bi-journal-text"></i><span>Quản lý người dùng</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -354,10 +354,10 @@
         </ul>
       </li><!-- End Forms Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="author">
+        <a class="nav-link collapsed" data-bs-target="#author-nav" data-bs-toggle="collapse" href="${pageContext.request.contextPath}/author">
           <i class="bi bi-journal-text"></i><span>Quản lý tác giả</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="author-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="${pageContext.request.contextPath}/admin/author">
               <i class="bi bi-circle"></i><span>Thêm tác giả</span>
@@ -373,10 +373,10 @@
         </ul>
       </li><!-- End Forms Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="user">
+        <a class="nav-link collapsed" data-bs-target="#tke-nav" data-bs-toggle="collapse" href="${pageContext.request.contextPath}/user">
           <i class="bi bi-journal-text"></i><span>Thống kê</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="tke-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="${pageContext.request.contextPath}/admin/user">
               <i class="bi bi-circle"></i><span>Quản lý thống kê</span>

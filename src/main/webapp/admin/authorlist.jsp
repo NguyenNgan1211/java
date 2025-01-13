@@ -6,9 +6,9 @@
 
 <jsp:include page="adheader.jsp" />
 <script type="text/javascript">
-    function doDelete(id) {
-        if (confirm("Bạn có chắc muốn xóa không? " + id)) {
-            window.location = "DeleteauthorServlet?id=" + id;
+    function doDelete(authorid) {
+        if (confirm("Bạn có chắc muốn xóa không? " + authorid)) {
+            window.location = "DeleteauthorServlet?authorid=" + authorid;
         }
     }
 </script>
@@ -30,16 +30,16 @@
 							<thead>
 								<tr>
 									<th class="col-1 text-center">Id</th>
-									<th class="col-1 text-center">Họ và tên</th>
-									<td class="col-4 text-center">Email</td>
-									<td class="col-1 text-center">Số điện thoại</td>
+									<th class="col-3 text-center">Họ và tên</th>
+									<td class="col-2 text-center fw-bold">Email</td>
+									<td class="col-2 text-center fw-bold">Số điện thoại</td>
 									<th class="col-2 text-center">Chức năng</th>
 								</tr>
 							</thead>
 							<tbody>
 									<c:forEach items="${data}" var = "list" >
 									<tr>
-										<th class="text-center" scope="row">${list.id}</th>
+										<th class="text-center" scope="row">${list.authorid}</th>
 										<td>
 											<a  class="text-primary">${list.authorname}</a>
 										</td>
@@ -48,9 +48,9 @@
 									   
 
 										<td class="text-center">
-											<a href="${pageContext.request.contextPath}/admin/UpdateauthorServlet?id=${list.id}" class="btn btn-primary btn-sm"
+											<a href="${pageContext.request.contextPath}/admin/UpdateauthorServlet?authorid=${list.authorid}" class="btn btn-primary btn-sm"
 										   title="Sửa tác giả"><i class="bi bi-pencil"></i></a>
-											<a href="#" onclick="doDelete('${list.id}')" class="btn btn-danger btn-sm"
+											<a href="#" onclick="doDelete('${list.authorid}')" class="btn btn-danger btn-sm"
 										   title="Xóa tác giả"><i class="bi bi-trash"></i></a>
 										</td>
 									</tr>

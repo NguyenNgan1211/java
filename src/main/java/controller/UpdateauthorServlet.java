@@ -31,7 +31,7 @@ public class UpdateauthorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String id_S = request.getParameter("id");
+		String id_S = request.getParameter("authorid");
 		int id = Integer.parseInt(id_S);
 		AuthorDAO cd = new AuthorDAO();
 		Author c = cd.getAuthorById(id);
@@ -49,7 +49,7 @@ public class UpdateauthorServlet extends HttpServlet {
 		String authorname = request.getParameter("authorname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
-		String id_S = request.getParameter("id");
+		String id_S = request.getParameter("authorid");
 		int id = Integer.parseInt(id_S);
 		Author c = new Author(id,authorname,email,phone);
 		cd.update(c);
