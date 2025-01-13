@@ -13,16 +13,16 @@ public class AuthorDAO {
 	public List<Author> getAuthorAll(){
 		List<Author> list = new ArrayList<>();
 	
-		String sql = "SELECT `author`.`id`, `author`.`authorname`, `author`.`Email`, `author`.`Phone` "
+		String sql = "SELECT `author`.`authorid`, `author`.`authorname`, `author`.`Email`, `author`.`Phone` "
 		           + "FROM `qlsv`.`author` "
-		           + "WHERE 1 = 1";
+		           + "WHERE 1 ";
 		try (Connection connection = DBContext.getConnection();
         		PreparedStatement ps = connection.prepareStatement(sql)) {
 			ResultSet rs = ps.executeQuery();
 			int id;
 			String authorname,email,phone;
 			while(rs.next()) {
-				id = rs.getInt("id");
+				id = rs.getInt("authorid");
 				authorname = rs.getString("authorname");
 				email = rs.getString("email");
 				phone = rs.getString("phone");
@@ -35,18 +35,18 @@ public class AuthorDAO {
 		}
 			return list;
 	}
-	public Author getAuthorById(int id) {
-		String sql = "SELECT * FROM `author` WHERE `id` = ?";
+	public Author getAuthorById(int authorid) {
+		String sql = "SELECT * FROM `author` WHERE `authorid` = ?";
 		try (Connection connection = DBContext.getConnection();
 	    		PreparedStatement ps = connection.prepareStatement(sql)){
-			ps.setInt(1, id);
+			ps.setInt(1, authorid);
 			ResultSet rs= ps.executeQuery();
 			if(rs.next()) {
 				String phone = rs.getString("phone");
 				String email = rs.getString("email");
 				String authorname  = rs.getString("authorname");
 				
-				Author c = new Author(id, authorname,email,phone);
+				Author c = new Author(authorid, authorname,email,phone);
 				return c;
 			}
 		}catch(SQLException e) {
@@ -70,14 +70,14 @@ public class AuthorDAO {
 	}
 	public void update (Author c) {
 		String sql = "update `author`\r\n"
-				+ "set `authorname`=?,`email`= ?,`phone`=? WHERE `id`=?";
+				+ "set `authorname`=?,`email`= ?,`phone`=? WHERE `authorid`=?";
 				
 		try  (Connection connection = DBContext.getConnection();
 	    		PreparedStatement ps = connection.prepareStatement(sql)){
 			ps.setString(1, c.getAuthorname());
 			ps.setString(2, c.getEmail());
 			ps.setString(3, c.getPhone());
-	        ps.setInt(4, c.getId());
+	        ps.setInt(4, c.getAuthorid());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -85,15 +85,22 @@ public class AuthorDAO {
 		}
 	
 	}
-	public void delete (int id) {
-		String sql = "DELETE FROM `author` WHERE `id`= ?";
+	public void delete (int authorid) {
+		String sql = "DELETE FROM `author` WHERE `authorid`= ?";
 		try  (Connection connection = DBContext.getConnection();
 	    		PreparedStatement ps = connection.prepareStatement(sql)){
-			ps.setInt(1, id);
+			ps.setInt(1, authorid);
 			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	public static void main(String[] args) {
+		AuthorDAO dao = new AuthorDAO();
+		Author a = dao.getAuthorById(0);
+		
+			System.out.println(a);
 
+		
+	}
 }

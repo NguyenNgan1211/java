@@ -15,7 +15,10 @@ public class newsDAO {
 
     public List<News> getNewsAll() {
         List<News> list = new ArrayList<>();
-        String sql = "SELECT * FROM news";
+        String sql = "SELECT news.*, author.authorname, menu.menuname FROM news " +
+                "JOIN author ON news.authorid = author.authorid " +
+                "JOIN menu ON news.menuid = menu.menuid ";
+
         
         // Use try-with-resources to manage resources
         try (Connection connection = DBContext.getConnection();
@@ -29,7 +32,11 @@ public class newsDAO {
                 int authorid = rs.getInt("authorid");
                 int menuid = rs.getInt("menuid");
                 String image = rs.getString("image");
+                String authorname = rs.getString("author.authorname");
+                String menuname = rs.getString("menu.menuname");
                 News m = new News(newsid, newstitle, newscontent,authorid,menuid,image);
+                m.setAuthorname(authorname);
+                m.setMenuname(menuname);
                 list.add(m);
             }
         } catch (SQLException e) {

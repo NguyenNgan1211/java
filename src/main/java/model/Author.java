@@ -1,7 +1,7 @@
 package model;
 
 public class Author {
-	private int id;
+	private int authorid;
 	private String authorname;
 	private String email;
 	private String phone;
@@ -9,39 +9,51 @@ public class Author {
 	public Author() {
 		
 	}
-	public Author (int id,String authorname, String Email, String Phone)
-	{
-		this.id = id;
+
+	public Author(int authorid, String authorname, String email, String phone) {
+		super();
+		this.authorid = authorid;
 		this.authorname = authorname;
-		this.email = Email;
-		this.phone = Phone;
+		this.email = email;
+		this.phone = phone;
 	}
-	public int getId() {
-		return id;
+
+	public int getAuthorid() {
+		return authorid;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setAuthorid(int authorid) {
+		this.authorid = authorid;
 	}
+
 	public String getAuthorname() {
 		return authorname;
 	}
+
 	public void setAuthorname(String authorname) {
 		this.authorname = authorname;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPhone() {
 		return phone;
 	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", authorname=" + authorname + ", email=" + email + ", phone=" + phone + "]";
+		return "Author [authorid=" + authorid + ", authorname=" + authorname + ", email=" + email + ", phone=" + phone
+				+ "]";
 	}
+	
 }

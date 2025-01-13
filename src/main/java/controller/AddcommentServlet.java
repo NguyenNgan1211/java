@@ -40,32 +40,49 @@ public class AddcommentServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		CommentDAO cd = new CommentDAO();
-		String cmtid_S = request.getParameter("cmtid");
-		String useridS = request.getParameter("userid");
-		String newidS = request.getParameter("newid");
-		String content = request.getParameter("content");
-		String status = request.getParameter("status");
-		String created_atS = request.getParameter("created_at");
-		int cmtid;
-		int userid;
-		int newid;
-		Date created_at;
-		cmtid = Integer.parseInt(cmtid_S);
-		userid = Integer.parseInt(useridS);
-		newid = Integer.parseInt(newidS);
-		created_at =  Date.valueOf(created_atS);
-		Comments c= cd.getCommentById(cmtid);
-		if(c == null) {
-			c = new Comments(cmtid,userid,newid,content,status,created_at);
-			cd.insert(c);
-			request.getRequestDispatcher("/comment").forward(request, response);
-		}else {
-			String erorr = cmtid +" Đã tồn tại, xin mời chọn ID khác";
-			request.setAttribute("erorr", erorr);
-			request.getRequestDispatcher("/comment").forward(request, response);
-		}
+	    // Tạo DAO để thao tác với bình luận
+	    CommentDAO cd = new CommentDAO();
+
+	    // Lấy tham số từ request
+	    String useridS = request.getParameter("userid");
+	    String newidS = request.getParameter("newid");
+	    String content = request.getParameter("content");
+	    String status = request.getParameter("status");
+	    String created_atS = request.getParameter("created_at");
+
+	    try {
+	        // In ra console để kiểm tra giá trị đã lấy được
+	        System.out.println("User ID: " + useridS);
+	        System.out.println("News ID: " + newidS);
+	        System.out.println("Content: " + content);
+	        System.out.println("Status: " + status);
+	        System.out.println("Created At: " + created_atS);
+
+	        // Chuyển đổi kiểu dữ liệu
+	        int userid = Integer.parseInt(useridS);
+	        int newid = Integer.parseInt(newidS);
+	        Date created_at = Date.valueOf(created_atS);
+
+	        // Tạo đối tượng bình luận
+	        Comments c = new Comments(userid, newid, content, status, created_at);
+
+	        // Chèn vào cơ sở dữ liệu
+	        cd.insert(c);
+
+	        // Forward về trang comment
+	        request.setAttribute("message", "Bình luận đã được thêm thành công!");
+	        request.getRequestDispatcher("/comment").forward(request, response);
+	    } catch (NumberFormatException e) {
+	        // Xử lý nếu dữ liệu không hợp lệ
+	        System.err.println("Dữ liệu không hợp lệ: " + e.getMessage());
+	        request.setAttribute("error", "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại!");
+	        request.getRequestDispatcher("/comment").forward(request, response);
+	    } catch (Exception e) {
+	        // Xử lý lỗi khác
+	        e.printStackTrace();
+	        request.setAttribute("error", "Đã xảy ra lỗi: " + e.getMessage());
+	        request.getRequestDispatcher("/comment").forward(request, response);
+	    }
 	}
 
 }

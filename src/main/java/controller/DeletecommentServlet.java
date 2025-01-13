@@ -33,7 +33,7 @@ public class DeletecommentServlet extends HttpServlet {
 		int cmtid = Integer.parseInt(cmtid_S);
 		CommentDAO cd = new CommentDAO();
 		cd.delete(cmtid);
-		response.sendRedirect("CommentServlet");
+		response.sendRedirect(request.getContextPath()+"/comment");
 	}
 
 	/**

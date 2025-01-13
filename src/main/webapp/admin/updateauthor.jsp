@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cập nhật danh mục</title>
+
 <!-- Thêm Bootstrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 <style>
@@ -91,7 +91,7 @@
         <h2>Cập nhật tác giả</h2>
         <c:set value="${author}" var="c" />
         <form action="UpdateauthorServlet" method="post">
-            <input type="hidden" name="id" value="${c.id}" />
+            <input type="hidden" name="authorid" value="${c.authorid}" />
             
             <div class="mb-3">
                 <label for="authorname" class="form-label">Tên tác giả</label>

@@ -42,8 +42,8 @@
 									<th class="col-1 text-center">#</th>
 									<th class="col-2 text-center">Tiêu đề</th>
 									<td class="col-3 text-center fw-bold">Nội dung</td>
-									<!-- <td class="col-1 text-center fw-bold">Mã tác giả</td> -->
-									<td class="col-1 text-center fw-bold">Mã danh mục</td>
+									<td class="col-1 text-center fw-bold">Tên tác giả</td> 
+									<td class="col-1 text-center fw-bold">Tên danh mục</td>
 									<td class="col-1 text-center fw-bold">Ảnh</td>
 									<th class="col-2 text-center">Chức năng</th>
 								</tr>
@@ -60,8 +60,8 @@
 											</div>
 										</td>
 
-										<td class="text-center">${items.authorid}</td>
-										<td class="text-center">${items.menuid}</td>
+										<td class="text-center">${items.authorname}</td>
+										<td class="text-center">${items.menuname}</td>
 										<td class="text-center"><img
 											src="${pageContext.request.contextPath}/asset${items.image}"
 											alt="" style="max-width: 100px; max-height: 100px;" /></td>

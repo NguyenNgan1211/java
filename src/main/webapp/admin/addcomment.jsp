@@ -68,21 +68,17 @@ form button:active {
 }
 	
 </style>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+
 
 </head>
 <body>
 <jsp:include page="/admin/adheader.jsp" flush="true" />
-<div style="display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 100px); flex-direction: column; margin-top: 50px;">
-    <h2 style="margin-bottom: 20px;">Thêm binh luan moi</h2>
+<div style="display: flex;transform: translateX(50px); justify-content: center; align-items: center; min-height: calc(100vh - 100px); flex-direction: column; margin-top: 50px;">
+    <h2 style="margin-bottom: 20px;margin-top:20px;">Thêm bình luận mới</h2>
     <h3 style="color: red; margin-bottom: 20px;">${error }</h3>
     <form action="AddcommentServlet" method="post" style="text-align: left; width: 300px;">
  		
-        <div style="margin-bottom: 15px;">
-            <label for="cmtid" style="display: block; margin-bottom: 5px;">Id</label>
-            <input type="text" id="cmtid" name="cmtid" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-        </div>
+      
           <div style="margin-bottom: 15px;">
             <label for="userid" style="display: block; margin-bottom: 5px;">userid</label>
             <input type="text" id="userid" name="userid" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />

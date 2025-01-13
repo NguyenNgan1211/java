@@ -29,10 +29,10 @@
 								<tr>
 									<th class="col-1 text-center">#</th>
 									<th class="col-1 text-center">Người dùng</th>
-									<td class="col-4 text-center">Bài viết</td>
-									<td class="col-1 text-center">Bình luận</td>
-									<td class="col-1 text-center">Trạng thái</td>
-									<td class="col-1 text-center">Ngày bình luận</td>	
+									<td class="col-4 text-center fw-bold">Bài viết</td>
+									<td class="col-1 text-center fw-bold">Bình luận</td>
+									<td class="col-1 text-center fw-bold">Trạng thái</td>
+									<td class="col-1 text-center fw-bold">Ngày bình luận</td>	
 									<th class="col-2 text-center">Chức năng</th>
 								</tr>
 							</thead>
@@ -41,9 +41,9 @@
 									<tr>
 										<th class="text-center" scope="row">${items.cmtid}</th>
 										<td>
-											<a  class="text-primary">${items.newid}</a>
+											<a  class="text-primary">${items.username}</a>
 										</td>
-										<td class="text-center">${items.newid}</td>
+										<td class="text-center">${items.newstitle}</td>
 										<td class="text-center">${items.content}</td>
 									    <td class="text-center">${items.status}</td>
 									    <td class="text-center">${items.created_at}</td>

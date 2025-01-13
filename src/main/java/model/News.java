@@ -7,6 +7,8 @@ public class News {
 	private int authorid;
 	private int menuid;
 	private String image;
+	private String authorname;
+	private String menuname;
 	public News() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -28,6 +30,19 @@ public class News {
 		this.authorid = authorid;
 		this.menuid = menuid;
 		this.image = image;
+	}
+	
+	public String getMenuname() {
+		return menuname;
+	}
+	public void setMenuname(String menuname) {
+		this.menuname = menuname;
+	}
+	public String getAuthorname() {
+		return authorname;
+	}
+	public void setAuthorname(String authorname) {
+		this.authorname = authorname;
 	}
 	public int getNewsid() {
 		return newsid;

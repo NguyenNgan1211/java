@@ -34,9 +34,10 @@ public class AuthorServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		AuthorDAO cd = new AuthorDAO();
 		List<Author> list =  cd.getAuthorAll();
+		
 		request.setAttribute("data", list);
-
 		request.getRequestDispatcher("/admin/authorlist.jsp").forward(request, response);
+		
 	}
 
 	

@@ -62,7 +62,7 @@
 						
 					</div>
 
-					<div class="right-topbar">
+					<div class="right-topbar" style="transform: translateX(-170px);">
 						<a href="#"> <span class="fab fa-facebook-f"></span>
 						</a> <a href="#"> <span class="fab fa-twitter"></span>
 						</a> <a href="#"> <span class="fab fa-pinterest-p"></span>
@@ -77,7 +77,7 @@
 			<div class="wrap-header-mobile">
 				<!-- Logo moblie -->
 				<div class="logo-mobile">
-					<a href="index.html"><img src="images/icons/logo-01.png"
+					<a href="index.html"><img src="asset/images/icons/logo-01.png"
 						alt="IMG-LOGO"></a>
 				</div>
 
@@ -121,7 +121,7 @@
 					<!-- Menu desktop -->
 					<nav class="menu-desktop">
 						<a class="logo-stick" href="index.html"> <img
-							src="images/icons/logo-01.png" alt="LOGO">
+							src="asset/images/icons/logo-01.png" alt="LOGO">
 						</a>
 
 						<ul class="main-menu" style="padding-left: 165px;">
