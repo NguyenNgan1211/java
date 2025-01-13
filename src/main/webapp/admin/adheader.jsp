@@ -372,16 +372,7 @@
            
         </ul>
       </li><!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="user">
-          <i class="bi bi-journal-text"></i><span>Thống kê</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="${pageContext.request.contextPath}/admin/user">
-              <i class="bi bi-circle"></i><span>Quản lý thống kê</span>
-            </a>
-          </li>
+     
          
           <li>
            

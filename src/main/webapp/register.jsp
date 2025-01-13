@@ -93,7 +93,8 @@
 	        </div>
 	          <div style="margin-bottom: 15px;">
 	        
-	            <input type="hidden" id="role" name="role" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+	           <input type="hidden" id="role" name="role" value="1" />
+
 	        </div>
 	        <div style="text-align: center;">
 	            <button type="submit" style="padding: 12px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">

@@ -40,29 +40,11 @@ public class RegisterServlet extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		response.setContentType("text/html;charset=UTF-8");
-//		 String username = request.getParameter("username");
-//	        String password = request.getParameter("password");
-//	        String phone = request.getParameter("phone");
-//	        String address = request.getParameter("address");
-//	        String role = "0";
-//	       
-//	        String passwordmd5 = PasswordUtils.hashPassword(password);
-//	         String passwordmd5 = PasswordUtils.hashPassword(password);
-//	       if(!u) {
-//				request.setAttribute("error", "Thông tin đăng nhập sai");
-//				request.getRequestDispatcher("login.jsp").forward(request, response);
-//			} else {
-//				HttpSession session = request.getSession();
-//				session.setAttribute("user", u);
-//				response.sendRedirect("login");
-//			}
-		
+//		
 			UserDAO cd = new UserDAO();
 		
 			String username = request.getParameter("username");
@@ -70,10 +52,13 @@ public class RegisterServlet extends HttpServlet {
 			String phone = request.getParameter("phone");
 			String address = request.getParameter("address");
 			String role = request.getParameter("role");
+			if (role == null || role.isEmpty()) {
+				role = "1";
+			}
 			  String passwordmd5 = PasswordUtils.hashPassword(password);
 			  
 			cd.insert(username, passwordmd5, phone, address, role);
-			System.out.println("da them moi " );
+		
 			response.sendRedirect("login.jsp");
 		}
 	

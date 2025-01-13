@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
 		String username = request.getParameter("user");
 		String password = request.getParameter("pass");
 		String passwordmd5 = PasswordUtils.hashPassword(password);
-		//Đăng ký thì mã hóa thành md5 rồi thêm vào kiểu bình thường bạn insert vô là 123 thì chuyển cái 123 thành mã hóa bằng lệnh ni String passwordmd5 = PasswordUtils.hashPassword(password); okokrồi lưu vào thành dạng mã hóa còn khi đăng nhập thì mình nhập 123 rồi goij hàm nớ để chuyển xong ròi check trong db như bth  
+		
 		loginDAO dao = new loginDAO();
 		user u = dao.login(username, passwordmd5);
 		if(u==null) {

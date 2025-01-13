@@ -95,10 +95,13 @@ form button:active {
             <label for="address" style="display: block; margin-bottom: 5px;">Địa chỉ</label>
             <input type="text" id="address" name="address" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
         </div>
-          <div style="margin-bottom: 15px;">
-            <label for="role" style="display: block; margin-bottom: 5px;">Phân quyền</label>
-            <input type="text" id="role" name="role" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-        </div>
+          <div class="form-outline mb-3">
+			    <label for="role">Phân quyền</label>
+			    <select id="role" name="role" class="form-control form-control-lg">
+			        <option value="1" selected>Người dùng</option>
+			        <option value="0">Admin</option>
+			    </select>
+			</div>
         <div style="text-align: center;">
             <button type="submit" style="padding: 12px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
                 SAVE

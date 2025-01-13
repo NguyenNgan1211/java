@@ -3,7 +3,6 @@
     <%@taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 
 
-
 <jsp:include page="adheader.jsp" />
 <script type="text/javascript">
     function doDelete(userid) {
@@ -50,7 +49,16 @@
 										<td class="text-center">${list.password}</td>
 										<td class="text-center">${list.phone}</td>
 									    <td class="text-center">${list.address}</td>
-									    <td class="text-center">${list.role}</td>
+									   <td class="text-center">
+									    <c:choose>
+									        <c:when test="${list.role == 0}">
+									            Admin
+									        </c:when>
+									        <c:otherwise>
+									            Người dùng
+									        </c:otherwise>
+										    </c:choose>
+										</td>
 
 										<td class="text-center">
 											<a href="${pageContext.request.contextPath}/admin/UpdateuserServlet?userid=${list.userid}" class="btn btn-primary btn-sm"
