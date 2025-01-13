@@ -123,7 +123,8 @@
 	</section> -->
 
 <!-- Post -->
-<section class="bg0 p-t-70">
+<!-- p-t-70 -->
+<section class="bg0 ">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-10 col-lg-8">
